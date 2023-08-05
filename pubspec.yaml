@@ -29,6 +29,13 @@ dev_dependencies:
 
 # The following section is specific to Flutter packages.
 flutter:
+  plugin:
+    implements: geocoding_client
+    platforms:
+      web:
+        pluginClass: GeocodingClient
+        fileName: geocoding_client_web
+        dartPluginClass: GeocodingClientWeb
 
   # To add assets to your package, add an assets section, like this:
   # assets:
