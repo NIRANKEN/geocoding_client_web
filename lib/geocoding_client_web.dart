@@ -12,15 +12,14 @@ import 'package:logger/logger.dart';
 
 final logger = Logger(printer: PrettyPrinter());
 
-class GeocodingClientWeb implements GeocodingClient {
-  GeocodingClientWeb({this.searchResultLimit = 5});
-  @override
-  final int searchResultLimit;
+class GeocodingClientWeb extends GeocodingClient {
+  GeocodingClientWeb();
+
+  static const int searchResultLimit = 5;
   gmap_web.Geocoder geocoder = gmap_web.Geocoder();
 
   @visibleForTesting
-  GeocodingClientWeb.withMockGeocoder(
-      {this.searchResultLimit = 5, required this.geocoder});
+  GeocodingClientWeb.withMockGeocoder({required this.geocoder});
 
   @override
   Future<List<PlaceMark>> getGeocode(String searchText) async {
