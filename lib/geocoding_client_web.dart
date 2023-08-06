@@ -15,6 +15,10 @@ final logger = Logger(printer: PrettyPrinter());
 class GeocodingClientWeb extends GeocodingClient {
   GeocodingClientWeb();
 
+  static void registerWith() {
+    GeocodingClient.instance = GeocodingClientWeb();
+  }
+
   static const int searchResultLimit = 5;
   gmap_web.Geocoder geocoder = gmap_web.Geocoder();
 
