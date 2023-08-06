@@ -33,9 +33,8 @@ flutter:
     implements: geocoding_client
     platforms:
       web:
-        pluginClass: GeocodingClient
+        pluginClass: GeocodingClientWeb
         fileName: geocoding_client_web.dart
-        dartPluginClass: GeocodingClientWeb
 
   # To add assets to your package, add an assets section, like this:
   # assets:
